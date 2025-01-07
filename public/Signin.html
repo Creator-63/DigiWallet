@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700&display=swap" rel="stylesheet">
+      <title>Digi Wallet</title>
+      <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/2272/2272815.png">
+      <style>
+        .clickbutton{
+        background-color: rgb(49, 48, 48);
+        border: none;
+        color: #00e600;
+        padding: 20px 35px;
+        font-family : "Doto", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-variation-settings:"ROND" 0;
+        text-align: center;
+        border-radius: 12px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        cursor: pointer;
+        }
+        .H1{
+          font-family : "Doto", serif;
+          font-optical-sizing: auto;
+          font-weight: 500;
+          font-style: normal;
+          font-variation-settings:"ROND" 0;
+          text-align: center;
+          color :#00e600
+        }
+        body {
+          background-image: url('https://wallpapers.com/images/hd/pure-black-landscape-plaid-pattern-fh6tqhnaisncypgl.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+          /*background-size: cover;*/
+          /*#00e600*/
+        }
+      </style>
+    </head>
+    <body>
+        <h1 style="text-align:center ; margin-top:45px ; font-size: 160px;" class="H1">DIGI WALLET</h1>
+        <div style="border:dotted; border-color: #00e600; padding:25px 25px; border-radius:12px;margin-top: 50px; margin-right: 450px; margin-left: 450px;">
+          <label for="SigninEmail" class="H1" style="text-align: justify;">Email address<br></label>
+          <input type="email" class="H1" style="display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: rgba(56, 55, 55, 0);
+            background-clip: padding-box;
+            border: 1px solid black;
+            border-radius: 6px;
+            " id="SigninEmail" placeholder="Email">
+
+          <label for="SigninPassword" class="H1" style="text-align: justify;">Password</label>
+          <input type="password" class="H1" style="display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: rgba(56, 55, 55, 0);
+            background-clip: padding-box;
+            border: 1px solid black;
+            border-radius: 6px;
+            " id="SigninPassword" placeholder="Password">
+            
+          <button type="button" class="clickbutton" style="padding: 5px 10px; margin-top: 15px;" id="login">Signin</button>
+        </div>
+        <p id="result" class="H1" style="display: none;">Signed In</p>
+        <script type="module" src="./auth.js"></script>
+      </body>
+</html>		  

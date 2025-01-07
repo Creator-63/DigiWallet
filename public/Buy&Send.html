@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prices</title>
+</head>
+<body>
+    <h1>Cryptocurrency Prices</h1>
+    <button id="fetchPrices">Get Prices</button>
+    <ul id="cryptoList"></ul>
+
+    <script>
+        document.getElementById("fetchPrices").addEventListener("click", async () => {
+            const cryptoList = ["bitcoin", "ethereum", "dogecoin", "cardano", "solana"];
+            const apiURL = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoList.join(",")}&vs_currencies=usd`;
+
+            try {
+                // Fetch data from the API
+                const response = await fetch(apiURL);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch crypto prices");
+                }
+
+                // Parse the JSON response
+                const data = await response.json();
+
+                // Display prices in the list
+                const cryptoListElement = document.getElementById("cryptoList");
+                cryptoListElement.innerHTML = ""; // Clear any previous entries
+
+                cryptoList.forEach((crypto) => {
+                    const price = data[crypto]?.usd ?? "N/A"; // Handle missing data
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${crypto.charAt(0).toUpperCase() + crypto.slice(1)}: $${price}`;
+                    cryptoListElement.appendChild(listItem);
+                });
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
